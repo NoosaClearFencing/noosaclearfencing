@@ -10,16 +10,16 @@
         a {text-decoration:none;}
         header {position:relative; height:100vh; overflow:hidden;}
         .hero-image {position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:1;}
-        .logo-stripe {position:absolute; top:0; left:0; width:100%; height:120px; background:#000; z-index:2; display:flex; align-items:center; justify-content:center;}
+        .logo-stripe {position:fixed; top:0; left:0; width:100%; background:#000; padding:20px 0; z-index:10; text-align:center;}
         .logo-img {max-width:400px; width:90%; height:auto;}
-        nav {position:fixed; top:120px; left:0; width:100%; background:rgba(255,255,255,0.95); text-align:center; padding:20px 0; z-index:10; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+        nav {position:fixed; top:100px; left:0; width:100%; background:rgba(255,255,255,0.95); text-align:center; padding:20px 0; z-index:10; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
         nav a {margin:0 20px; color:#333; font-weight:500; font-size:1.1em;}
         nav a:hover, nav a.active {color:#0077be;}
         section {padding:80px 20px; max-width:1200px; margin:0 auto; text-align:left;}
         h1 {font-size:3em; font-weight:300; color:#fff; margin:0; text-align:center;}
         h2 {font-size:2.5em; font-weight:300; text-align:center; margin:60px 0 40px;}
         p {font-size:1.2em; max-width:900px; margin:20px auto; text-align:center;}
-        ul {font-size:1.2em; max-width:800px; margin:40px auto; list-style:none; padding:0; text-align:center;}
+        ul {font-size:1.2em; max-width:800px; margin:40px auto; list-style:none; padding:0; text-align:left;}
         ul li {margin:20px 0; position:relative; padding-left:30px;}
         ul li:before {content:"•"; color:#0077be; position:absolute; left:0; font-size:1.5em; line-height:1;}
         .gallery-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(350px,1fr)); gap:30px; margin:80px 0;}
@@ -37,10 +37,9 @@
         .cta-btn.email:hover {background:#f0f8ff;}
         footer {background:#333; color:#fff; text-align:center; padding:50px 20px;}
         @media (max-width:768px) {
-            header {height:70vh;}
-            .logo-stripe {height:100px;}
+            .logo-stripe {padding:15px 0;}
             .logo-img {max-width:280px;}
-            nav {top:100px;}
+            nav {top:80px;}
             nav a {display:block; margin:15px 0;}
             .gallery-grid {grid-template-columns:1fr;}
             .cta-btn {padding:18px 40px; font-size:1.3em; margin:20px 0; display:block; width:80%; max-width:300px;}
@@ -51,10 +50,11 @@
 
 <header>
     <img src="panoramic.jpg" alt="Panoramic view of frameless glass pool fencing on the Sunshine Coast" class="hero-image">
-    <div class="logo-stripe">
-        <img src="Noosa%20Clear%20Fencing%20LOGO.jpg" alt="Noosa Clear Fencing Logo" class="logo-img">
-    </div>
 </header>
+
+<div class="logo-stripe">
+    <img src="Noosa%20Clear%20Fencing%20LOGO.jpg" alt="Noosa Clear Fencing Logo" class="logo-img">
+</div>
 
 <nav>
     <a href="#overview" class="active">Overview</a>
@@ -66,16 +66,15 @@
 </nav>
 
 <section id="overview">
-    <h1>Premium Frameless Glass Pool Fencing</h1>
     <p style="font-size:1.5em; text-align:center; max-width:900px; margin:0 auto;">
-        Trusted for style, safety and uninterrupted views across Noosa and the Sunshine Coast.
+        Premium frameless glass pool fencing trusted for style, safety and uninterrupted views across Noosa and the Sunshine Coast.
     </p>
 </section>
 
 <section id="about" class="about-section">
     <h2>About Us</h2>
     <p>
-        Noosa Clear Fencing is a proud Queensland company based in Noosa Heads that proudly installs premium outdoor solutions for the Australian market.
+        Noosa Clear Fencing is a Queensland company based in Noosa Heads that proudly designs and installs outdoor solutions for the Australian market.
     </p>
     <p>
         We are leaders in the design and installation of innovative products for glass pool fencing. We offer a wide range of products including frameless and semi-frameless systems.
@@ -105,10 +104,6 @@
     </select>
 
     <div id="all" class="product-category">
-        <!-- All tables combined or separate -->
-    </div>
-
-    <div id="glass" class="product-category" style="display:none;">
         <h3>Glass Panels</h3>
         <table class="product-table">
             <thead>
@@ -117,26 +112,159 @@
             <tbody>
                 <tr><td>FF0100</td><td>12mm Frameless PANEL 100*1200mm</td></tr>
                 <tr><td>FF0200</td><td>12mm Frameless PANEL 200*1200mm</td></tr>
-                <!-- List all from previous -->
-            </tbody>
+                <tr><td>FF0250</td><td>12mm Frameless PANEL 250*1200mm</td></tr>
+                <tr><td>FF0300</td><td>12mm Frameless PANEL 300*1200mm</td></tr>
+                <tr><td>FF0350</td><td>12mm Frameless PANEL 350*1200mm</td></tr>
+                <tr><td>FF0400</td><td>12mm Frameless PANEL 400*1200mm</td></tr>
+                <tr><td>FF0450</td><td>12mm Frameless PANEL 450*1200mm</td></tr>
+                <tr><td>FF0500</td><td>12mm Frameless PANEL 500*1200mm</td></tr>
+                <tr><td>FF0550</td><td>12mm Frameless PANEL 550*1200mm</td></tr>
+                <tr><td>FF0600</td><td>12mm Frameless PANEL 600*1200mm</td></tr>
+                <tr><td>FF0650</td><td>12mm Frameless PANEL 650*1200mm</td></tr>
+                <tr><td>FF0700</td><td>12mm Frameless PANEL 700*1200mm</td></tr>
+                <tr><td>FF0750</td><td>12mm Frameless PANEL 750*1200mm</td></tr>
+                <tr><td>FF0800</td><td>12mm Frameless PANEL 800*1200mm</td></tr>
+                <tr><td>FF0850</td><td>12mm Frameless PANEL 850*1200mm</td></tr>
+                <tr><td>FF0900</td><td>12mm Frameless PANEL 900*1200mm</td></tr>
+                <tr><td>FF0950</td><td>12mm Frameless PANEL 950*1200mm</td></tr>
+                <tr><td>FF1000</td><td>12mm Frameless PANEL 1000*1200mm</td></tr>
+                <tr><td>FF1050</td><td>12mm Frameless PANEL 1050*1200mm</td></tr>
+                <tr><td>FF1100</td><td>12mm Frameless PANEL 1100*1200mm</td></tr>
+                <tr><td>FF1150</td><td>12mm Frameless PANEL 1150*1200mm</td></tr>
+                <tr><td>FF1200</td><td>12mm Frameless PANEL 1200*1200mm</td></tr>
+                <tr><td>FF1250</td><td>12mm Frameless PANEL 1250*1200mm</td></tr>
+                <tr><td>FF1300</td><td>12mm Frameless PANEL 1300*1200mm</td></tr>
+                <tr><td>FF1350</td><td>12mm Frameless PANEL 1350*1200mm</td></tr>
+                <tr><td>FF1400</td><td>12mm Frameless PANEL 1400*1200mm</td></tr>
+                <tr><td>FF1450</td><td>12mm Frameless PANEL 1450*1200mm</td></tr>
+                <tr><td>FF1500</td><td>12mm Frameless PANEL 1500*1200mm</td></tr>
+                <tr><td>FF1550</td><td>12mm Frameless PANEL 1550*1200mm</td></tr>
+                <tr><td>FF1600</td><td>12mm Frameless PANEL 1600*1200mm</td></tr>
+                <tr><td>FF1650</td><td>12mm Frameless PANEL 1650*1200mm</td></tr>
+                <tr><td>FF1700</td><td>12mm Frameless PANEL 1700*1200mm</td></tr>
+                <tr><td>FF1750</td><td>12mm Frameless PANEL 1750*1200mm</td></tr>
+                <tr><td>FF1800</td><td>12mm Frameless PANEL 1800*1200mm</td></tr>
+                <tr><td>FF1850</td><td>12mm Frameless PANEL 1850*1200mm</td></tr>
+                <tr><td>FF1900</td><td>12mm Frameless PANEL 1900*1200mm</td></tr>
+                <tr><td>FF1950</td><td>12mm Frameless PANEL 1950*1200mm</td></tr>
+                <tr><td>FF2000</td><td>12mm Frameless PANEL 2000*1200mm</td></tr>
+                <tr><td>HPF-0500</td><td>12mm STANDARD HINGE PANEL 500*1200mm</td></tr>
+                <tr><td>HPF-0600</td><td>12mm STANDARD HINGE PANEL 600*1200mm</td></tr>
+                <tr><td>HPF-0800</td><td>12mm STANDARD HINGE PANEL 800*1200mm</td></tr>
+                <tr><td>HPF-1000</td><td>12mm STANDARD HINGE PANEL 1000*1200mm</td></tr>
+                <tr><td>HPF-1100</td><td>12mm STANDARD HINGE PANEL 1100*1200mm</td></tr>
+                <tr><td>HPF-1200</td><td>12mm STANDARD HINGE PANEL 1200*1200mm</td></tr>
+                <tr><td>HPF-1300</td><td>12mm STANDARD HINGE PANEL 1300*1200mm</td></tr>
+                <tr><td>HPF-1400</td><td>12mm STANDARD HINGE PANEL 1400*1200mm</td></tr>
+                <tr><td>HPF-1500</td><td>12mm STANDARD HINGE PANEL 1500*1200mm</td></tr>
+                <tr><td>HPF-1600</td><td>12mm STANDARD HINGE PANEL 1600*1200mm</td></tr>
+                <tr><td>HPF-1700</td><td>12mm STANDARD HINGE PANEL 1700*1200mm</td></tr>
+                <tr><td>HPF-1800</td><td>12mm STANDARD HINGE PANEL 1800*1200mm</td></tr>
+                <tr><td>HPF-2000</td><td>12mm STANDARD HINGE PANEL 2000*1200mm</td></tr>
+                <tr><td>12NPH-0600</td><td>12mm Polaris HINGE PANEL 600*1200mm</td></tr>
+                <tr><td>12NPH-0800</td><td>12mm Polaris HINGE PANEL 800*1200mm</td></tr>
+                <tr><td>12NPH-1000</td><td>12mm Polaris HINGE PANEL 1000*1200mm</td></tr>
+                <tr><td>12NPH-1100</td><td>12mm Polaris HINGE PANEL 1100*1200mm</td></tr>
+                <tr><td>12NPH-1200</td><td>12mm Polaris HINGE PANEL 1200*1200mm</td></tr>
+                <tr><td>12NPH-1300</td><td>12mm Polaris HINGE PANEL 1300*1200mm</td></tr>
+                <tr><td>12NPH-1400</td><td>12mm Polaris HINGE PANEL 1400*1200mm</td></tr>
+                <tr><td>12NPH-1500</td><td>12mm Polaris HINGE PANEL 1500*1200mm</td></tr>
+                <tr><td>12NPH-1600</td><td>12mm Polaris HINGE PANEL 1600*1200mm</td></tr>
+                <tr><td>12NPH-1700</td><td>12mm Polaris HINGE PANEL 1700*1200mm</td></tr>
+                <tr><td>12NPH-1800</td><td>12mm Polaris HINGE PANEL 1800*1200mm</td></tr>
+                <tr><td>GP-0750</td><td>8mm GATE PANEL 750*1200mm</td></tr>
+                <tr><td>GP-0800</td><td>8mm GATE PANEL 800*1200mm</td></tr>
+                <tr><td>GP-0834</td><td>8mm GATE PANEL 834*1200mm</td></tr>
+                <tr><td>GP-0850</td><td>8mm GATE PANEL 850*1200mm</td></tr>
+                <tr><td>GP-0890</td><td>8mm GATE PANEL 890*1200mm</td></tr>
+                <tr><td>GP-0900</td><td>8mm GATE PANEL 900*1200mm</td></tr>
+                <tr><td>GP-0950</td><td>8mm GATE PANEL 950*1200mm</td></tr>
+                <tr><td>GP-1000</td><td>8mm GATE PANEL 1000*1200mm</td></tr>
+                <tr><td>GP-PGG-0800</td><td>12mm Soft Close GATE to Glass 800*1200mm</td></tr>
+                <tr><td>GP-PGG-0900</td><td>12mm Soft Close GATE to Glass 900*1200mm</td></tr>
+                <tr><td>GP-PWG-0800</td><td>12mm Soft Close GATE to Wall 800*1200mm</td></tr>
+                <tr><td>GP-PWG-0900</td><td>12mm Soft Close GATE to Wall 900*1200mm</td></tr>
+                <tr><td>GP-BG-0900</td><td>BALUSTRADE GATE 8mm Standard 900*970mm</td></tr>
+                <tr><td>GP-BGP-0900</td><td>BALUSTRADE GATE 12mm POLARIS 900*970mm</td></tr>
+                <tr><td>CG-0600</td><td>12mm Channel Glass 600*1350mm</td></tr>
+                <tr><td>CG-0700</td><td>12mm Channel Glass 700*1350mm</td></tr>
+                <tr><td>CG-0800</td><td>12mm Channel Glass 800*1350mm</td></tr>
+                <tr><td>CG-0900</td><td>12mm Channel Glass 900*1350mm</td></tr>
+                <tr><td>CG-1000</td><td>12mm Channel Glass 1000*1350mm</td></tr>
+                <tr><td>CG-1100</td><td>12mm Channel Glass 1100*1350mm</td></tr>
+                <tr><td>CG-1200</td><td>12mm Channel Glass 1200*1350mm</td></tr>
+                <tr><td>CG-1300</td><td>12mm Channel Glass 1300*1350mm</td></tr>
+                <tr><td>CG-1400</td><td>12mm Channel Glass 1400*1350mm</td></tr>
+                <tr><td>CG-1500</td><td>12mm Channel Glass 1500*1350mm</td></tr>
+                <tr><td>CG-1600</td><td>12mm Channel Glass 1600*1350mm</td></tr>
+                <tr><td>CG-H1000</td><td>Channel HINGE PANEL 1000*1350mm</td></tr>
+                <tr><td>CG-PH1000</td><td>Polaris Channel HINGE 1000*1350mm</td></tr>
+                <tr><td>RP-1300HT</td><td>12mm Raked PANEL 1300 > 1200*1200mm</td></tr>
+                <tr><td>RP-1350HT</td><td>12mm Raked PANEL 1350 > 1200*1200mm</td></tr>
+                <tr><td>RP-1400HT</td><td>12mm Raked PANEL 1400 > 1200*1200mm</td></tr>
+                <tr><td>RP-1450HT</td><td>12mm Raked PANEL 1450 > 1200*1200mm</td></tr>
+                <tr><td>RP-1500HT</td><td>12mm Raked PANEL 1500 > 1200*1200mm</td></tr>
+                <tr><td>RP-1550HT</td><td>12mm Raked PANEL 1550 > 1200*1200mm</td></tr>
+                <tr><td>RP-1600HT</td><td>12mm Raked PANEL 1600 > 1200*1200mm</td></tr>
+                <tr><td>RP-1700HT</td><td>12mm Raked PANEL 1700 > 1200*1200mm</td></tr>
+                <tr><td>RP-1800HT</td><td>12mm Raked PANEL 1800 > 1200*1200mm</td></tr>
+                <tr><td>15FF-0800</td><td>15mm Clear Frameless Pool Fencing 800mm x 1200mm High</td></tr>
+                <tr><td>15FF-0900</td><td>15mm Clear Frameless Pool Fencing 900mm x 1200mm High</td></tr>
+                <tr><td>15FF-1000</td><td>15mm Clear Frameless Pool Fencing 1000mm x 1200mm High</td></tr>
+                <tr><td>VERT-0500</td><td>500 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-0600</td><td>600 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-0700</td><td>700 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-0800</td><td>800 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-0850</td><td>850 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-0900</td><td>900 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-0950</td><td>950 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-1000</td><td>1000 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-1050</td><td>1050 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-1100</td><td>1100 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-1150</td><td>1150 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-1200</td><td>1200 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-1250</td><td>1250 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-1300</td><td>1300 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-1350</td><td>1350 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-1400</td><td>1400 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-1450</td><td>1450 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-1500</td><td>1500 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-1550</td><td>1550 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>VERT-1600</td><td>1600 x 1380 x 12mm Glass Pool Fence Panel</td></tr>
+                <tr><td>HPVERT-1000</td><td>12mm Balustrade Heat Soaked Face Fixed Hinge 1380*1000</td></tr>
+                <tr><td>HPVERT-1200</td><td>12mm Balustrade Heat Soaked Face Fixed Hinge 1380*1200</td></tr>
+                <tr><td>HPVERT-1400</td><td>12mm Balustrade Heat Soaked Face Fixed Hinge 1380*1400</td></tr>
+                <tr><td>SOPG0900</td><td>900 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
+                <tr><td>SOPG0950</td><td>950 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
+                <tr><td>SOPG1000</td><td>1000 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
+                <tr><td>SOPG1050</td><td>1050 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
+                <tr><td>SOPG1100</td><td>1100 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
+                <tr><td>SOPG1150</td><td>1150 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
+                <tr><td>SOPG1200</td><td>1200 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
+                <tr><td>SOPG1250</td><td>1250 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
+                <tr><td>SOPG1300</td><td>1300 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
+                <tr><td>SOPG1350</td><td>1350 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
+                <tr><td>SOPG1400</td><td>1400 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
+                <tr><td>SOPG1450</td><td>1450 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
+                <tr><td>SOPG1500</td><td>1500 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
+            </div>
         </table>
     </div>
 
-    <!-- Repeat for other categories with full lists -->
+    <!-- Repeat for Spigots, Clamps, Gates, Posts, Aluminium Fencing with full lists -->
 
 </section>
 
 <section id="features">
-    <h2>Key Features</h2>
+    <h2>Key Features & Compliance</h2>
     <ul>
-        <li>12mm A-grade toughened safety glass</li>
-        <li>Marine-grade 316/2205 duplex stainless steel hardware</li>
-        <li>Core-drilled or surface-mount spigot options</li>
-        <li>Self-closing and soft-close gate systems</li>
-        <li>Large panels for minimal visual obstruction</li>
-        <li>Full compliance with AS1926.1 and QLD regulations</li>
-        <li>Form 15 issued with every installation</li>
-        <li>10-year workmanship warranty</li>
+        <li><strong>Glass</strong>: 12mm A-grade toughened safety glass</li>
+        <li><strong>Hardware</strong>: Marine-grade 316/2205 duplex stainless steel</li>
+        <li><strong>Compliance</strong>: Fully meets AS1926.1 & Queensland pool safety laws</li>
+        <li><strong>Certification</strong>: Form 15 Compliance Certificate issued with every installation</li>
+        <li><strong>Licence</strong>: QBCC #15554051</li>
+        <li><strong>Warranty</strong>: 10-year workmanship guarantee</li>
+        <li><strong>Service</strong>: Free on-site measure & quote, fast 2–3 week turnaround</li>
     </ul>
 </section>
 
@@ -151,7 +279,6 @@
         <img src="image (5).jpg" alt="Hinterland views through crystal clear glass fencing">
         <img src="image (6).jpg" alt="Modern pool area with unobstructed views Noosa">
         <img src="image (7).jpg" alt="Professional core-drilled spigot installation">
-        <!-- Add more if you have additional images uploaded -->
     </div>
 </section>
 
@@ -184,6 +311,7 @@
 </footer>
 
 <script>
+    // Hide/show sections on nav click
     const productsLink = document.querySelector('nav a[href="#products"]');
     const productsSection = document.getElementById('products');
     const aboutLink = document.querySelector('nav a[href="#about"]');
@@ -192,6 +320,7 @@
     productsLink.addEventListener('click', function(e) {
         e.preventDefault();
         productsSection.style.display = 'block';
+        aboutSection.style.display = 'none';
         productsSection.scrollIntoView({ behavior: 'smooth' });
         document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
         this.classList.add('active');
@@ -200,6 +329,7 @@
     aboutLink.addEventListener('click', function(e) {
         e.preventDefault();
         aboutSection.style.display = 'block';
+        productsSection.style.display = 'none';
         aboutSection.scrollIntoView({ behavior: 'smooth' });
         document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
         this.classList.add('active');
@@ -221,6 +351,22 @@
         aboutSection.style.display = 'none';
     });
 
+    // Toggle categories
+    function toggleProductCategory(header) {
+        let content = header.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Search
+    document.getElementById('product-search').addEventListener('input', function() {
+        let filter = this.value.toLowerCase();
+        document.querySelectorAll('.product-table tbody tr').forEach(row => {
+            let text = row.textContent.toLowerCase();
+            row.style.display = text.includes(filter) ? '' : 'none';
+        });
+    });
+
+    // Dropdown for categories
     function showCategory(value) {
         document.querySelectorAll('.product-category').forEach(cat => {
             cat.style.display = (value === 'all' || cat.id === value) ? 'block' : 'none';
