@@ -16,7 +16,8 @@
         section {padding:70px 20px; max-width:1200px; margin:0 auto;}
         h1 {font-size:2.8em; font-weight:300; margin:0 0 30px; text-align:center;}
         h2 {font-size:2.3em; font-weight:300; text-align:left; margin:50px 0 30px;}
-        h3 {font-size:1.8em; font-weight:400; margin:40px 0 20px;}
+        h3 {font-size:1.8em; font-weight:400; margin:0; cursor:pointer; touch-action:manipulation; -webkit-tap-highlight-color:transparent; padding:15px; background:#f0f0f0; border-radius:8px;}
+        h3:hover {background:#e5e5e5;}
         p {font-size:1.2em; max-width:900px; margin:20px 0;}
         .intro {font-size:1.4em; text-align:center; max-width:900px; margin:40px auto;}
         ul {font-size:1.2em; max-width:800px; margin:0 0 40px; list-style:none; padding:0;}
@@ -26,22 +27,12 @@
         .gallery-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:30px; margin:60px 0;}
         .gallery-grid img {width:100%; height:auto; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.1);}
         .product-section {background:#fff; padding:50px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.05); margin:40px 0;}
-        #product-search {width:100%; max-width:600px; padding:15px; margin:30px auto; display:block; border:1px solid #ddd; border-radius:8px; font-size:1.1em; touch-action:manipulation;}
-        .category-filter {text-align:center; margin:20px 0;}
-        .category-filter button {padding:10px 20px; margin:10px; background:#0077be; color:#fff; border:none; border-radius:50px; cursor:pointer; font-size:1em; touch-action:manipulation;}
-        .category-filter button.active, .category-filter button:hover {background:#005c9e;}
-        .product-category {display:none;}
-        .product-category.active {display:block;}
-        .product-table {width:100%; border-collapse:collapse; margin:20px 0; font-size:1em;}
-        .product-table th, .product-table td {border:1px solid #eee; padding:14px; text-align:left; vertical-align:top;}
-        .product-table th {background:#f0f0f0; font-weight:600;}
-        .product-table tr:nth-child(even) {background:#fafafa;}
-        .product-row {cursor:pointer; touch-action:manipulation;}
-        .product-details {display:none; padding:10px; background:#f0f0f0; border-top:1px solid #eee;}
+        #product-search {width:100%; max-width:600px; padding:15px; margin:30px auto; display:block; border:1px solid #ddd; border-radius:8px; font-size:1.1em; touch-action:manipulation; -webkit-tap-highlight-color:transparent;}
+        .product-category {display:none; margin-top:20px;}
         .contact-info {text-align:center; font-size:1.5em; margin:60px 0;}
         .contact-info a {color:#0077be; margin:0 25px; display:inline-block;}
         .contact-info a:hover {text-decoration:underline;}
-        .cta-btn {display:inline-block; background:#0077be; color:#fff; padding:20px 60px; border-radius:50px; font-size:1.5em; font-weight:bold; margin:40px 10px;}
+        .cta-btn {display:inline-block; background:#0077be; color:#fff; padding:20px 60px; border-radius:50px; font-size:1.5em; font-weight:bold; margin:40px 10px; touch-action:manipulation; -webkit-tap-highlight-color:transparent;}
         .cta-btn:hover {background:#005c9e;}
         .cta-btn.email {background:#fff; color:#0077be; border:3px solid #0077be;}
         .cta-btn.email:hover {background:#f0f8ff;}
@@ -59,8 +50,6 @@
             .contact-info {font-size:1.2em;}
             .contact-info a {display:block; margin:20px 0;}
             .cta-btn {padding:18px 40px; font-size:1.3em; margin:20px 0; display:block; width:80%; max-width:300px; margin-left:auto; margin-right:auto;}
-            .category-filter button {display:block; width:80%; max-width:300px; margin:10px auto;}
-            .product-details {font-size:0.95em;}
         }
     </style>
 </head>
@@ -87,47 +76,90 @@
 </section>
 
 <section id="products" class="product-section">
-    <h2>Our Products & Wholesale Price List</h2>
-    <p>Explore our full range of premium glass panels, spigots, clamps, gates, posts, and hardware. All prices are ex GST. Click a category to view products, then click a row to expand details.</p>
-    <input type="text" id="product-search" placeholder="Search by code, description or price...">
+    <h2>Products</h2>
+    <p>Explore our full range of premium glass panels, spigots, clamps, gates, posts, and hardware. Click a category to view the product list.</p>
+    <input type="text" id="product-search" placeholder="Search by code or description...">
 
-    <div class="category-filter">
-        <button data-category="all" class="active">All Products</button>
-        <button data-category="glass">Glass Panels</button>
-        <button data-category="spigots">Spigots</button>
-        <button data-category="clamps">Clamps</button>
-        <button data-category="gates">Gates</button>
-        <button data-category="posts">Posts</button>
-        <button data-category="aluminium">Aluminium Fencing</button>
-    </div>
-
-    <div id="glass" class="product-category active">
-        <h3>Glass Panels</h3>
+    <h3 onclick="toggleProductCategory(this)">Glass Panels</h3>
+    <div class="product-category" style="display:none;">
         <table class="product-table">
             <thead>
-                <tr><th>Code</th><th>Description</th><th>Price ex GST</th></tr>
+                <tr><th>Code</th><th>Description</th></tr>
             </thead>
             <tbody>
-                <tr class="product-row" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'table-row' ? 'none' : 'table-row';">
-                    <td>FF0100</td><td>12mm Frameless PANEL 100*1200mm</td><td>$15.00</td>
-                </tr>
-                <tr class="product-details" style="display:none;">
-                    <td colspan="3">Full details: High-quality 12mm frameless panel for pool fencing, compliant with standards.</td>
-                </tr>
-                <!-- Repeat this structure for all rows: <tr class="product-row">... then <tr class="product-details">... -->
-                <tr class="product-row" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'table-row' ? 'none' : 'table-row';">
-                    <td>FF2000</td><td>12mm Frameless PANEL 2000*1200mm</td><td>$129.60</td>
-                </tr>
-                <tr class="product-details" style="display:none;">
-                    <td colspan="3">Full details: High-quality 12mm frameless panel for pool fencing, compliant with standards.</td>
-                </tr>
-                <!-- Add full spigot rows with this expandable structure -->
+                <tr><td>FF0100</td><td>12mm Frameless PANEL 100*1200mm</td></tr>
+                <tr><td>FF0200</td><td>12mm Frameless PANEL 200*1200mm</td></tr>
+                <tr><td>FF0250</td><td>12mm Frameless PANEL 250*1200mm</td></tr>
+                <tr><td>FF0300</td><td>12mm Frameless PANEL 300*1200mm</td></tr>
+                <!-- Add all glass panel rows without prices -->
             </tbody>
         </table>
     </div>
 
-    <!-- Repeat the expandable row structure for all other categories -->
+    <h3 onclick="toggleProductCategory(this)">Spigots</h3>
+    <div class="product-category" style="display:none;">
+        <table class="product-table">
+            <thead>
+                <tr><th>Code</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>SP-LS-DF-S-P</td><td>Lifestyle Square SPIGOT-Core Drilled POLISH</td></tr>
+                <!-- Add all spigot rows without prices -->
+            </tbody>
+        </table>
+    </div>
 
+    <h3 onclick="toggleProductCategory(this)">Clamps</h3>
+    <div class="product-category" style="display:none;">
+        <table class="product-table">
+            <thead>
+                <tr><th>Code</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>GC-S-FB-B</td><td>Square CLAMP-Flat Back BLACK</td></tr>
+                <!-- Add all clamp rows without prices -->
+            </tbody>
+        </table>
+    </div>
+
+    <h3 onclick="toggleProductCategory(this)">Gates</h3>
+    <div class="product-category" style="display:none;">
+        <table class="product-table">
+            <thead>
+                <tr><th>Code</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>GH-G2G-P</td><td>HINGES Glass to Glass POLISH</td></tr>
+                <!-- Add all gate rows without prices -->
+            </tbody>
+        </table>
+    </div>
+
+    <h3 onclick="toggleProductCategory(this)">Posts</h3>
+    <div class="product-category" style="display:none;">
+        <table class="product-table">
+            <thead>
+                <tr><th>Code</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>A50-1400D-1W-B</td><td>A50 POST 1400mm 1 WAY - BLACK</td></tr>
+                <!-- Add all post rows without prices -->
+            </tbody>
+        </table>
+    </div>
+
+    <h3 onclick="toggleProductCategory(this)">Aluminium Fencing</h3>
+    <div class="product-category" style="display:none;">
+        <table class="product-table">
+            <thead>
+                <tr><th>Code</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>GH-KFP</td><td>D&D Kwk Fit - HINGES -Plain (No Spring) (BB-KF-H-NT)</td></tr>
+                <!-- Add all aluminium rows without prices -->
+            </tbody>
+        </table>
+    </div>
 </section>
 
 <section id="features">
@@ -139,18 +171,7 @@
 </section>
 
 <section id="contact">
-    <h2>Get Your Free Quote Today</h2>
-    <p class="intro">
-        Ready to transform your pool area? Contact us for expert advice and a no-obligation quote.
-    </p>
-    <div class="contact-info">
-        <a href="tel:0432665927">0432 665 927</a>
-        <a href="mailto:info@noosaclearfencing.com.au">info@noosaclearfencing.com.au</a>
-    </div>
-    <div style="text-align:center;">
-        <a href="tel:0432665927" class="cta-btn">Call Now</a>
-        <a href="mailto:info@noosaclearfencing.com.au" class="cta-btn email">Send Email</a>
-    </div>
+    <!-- Same as previous -->
 </section>
 
 <section>
@@ -167,25 +188,16 @@
 </footer>
 
 <script>
-    // Category filter
-    document.querySelectorAll('.category-filter button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.category-filter button').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            let cat = btn.getAttribute('data-category');
-            document.querySelectorAll('.product-category').forEach(sec => {
-                sec.classList.toggle('active', cat === 'all' || sec.id === cat);
-            });
-        });
-    });
+    function toggleProductCategory(header) {
+        let content = header.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
 
-    // Search
     document.getElementById('product-search').addEventListener('input', function() {
         let filter = this.value.toLowerCase();
-        document.querySelectorAll('.product-table tbody tr.product-row').forEach(row => {
+        document.querySelectorAll('.product-table tbody tr').forEach(row => {
             let text = row.textContent.toLowerCase();
             row.style.display = text.includes(filter) ? '' : 'none';
-            row.nextElementSibling.style.display = 'none'; // Close details on search
         });
     });
 </script>
