@@ -6,7 +6,7 @@
     <meta name="description" content="Premium frameless glass pool fencing Noosa & Sunshine Coast. QBCC licensed, Form 15 compliance, free quotes. Noosa Clear Fencing – safety with stunning views.">
     <title>Noosa Clear Fencing | Premium Frameless Glass Pool Fencing</title>
     <style>
-        body {font-family: 'Helvetica Neue', Arial, sans-serif; margin:0; padding:0; color:#333; line-height:1.8; background:#f5f5f5;}
+        body {font-family: 'Helvetica Neue', Arial, sans-serif; margin:0; padding:0; color:#333; line-height:1.8; background:#f5f5f5; -webkit-text-size-adjust:100%;}
         a {text-decoration:none;}
         header {background:#fff; text-align:center; padding:50px 20px 30px; box-shadow:0 2px 10px rgba(0,0,0,0.05);}
         .logo-img {max-width:340px; width:90%; height:auto; display:block; margin:0 auto;}
@@ -26,9 +26,9 @@
         .gallery-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:30px; margin:60px 0;}
         .gallery-grid img {width:100%; height:auto; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.1);}
         .product-section {background:#fff; padding:50px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.05); margin:40px 0;}
-        #product-search {width:100%; max-width:600px; padding:15px; margin:30px auto; display:block; border:1px solid #ddd; border-radius:8px; font-size:1.1em;}
+        #product-search {width:100%; max-width:600px; padding:15px; margin:30px auto; display:block; border:1px solid #ddd; border-radius:8px; font-size:1.1em; touch-action:manipulation;}
         .category-filter {text-align:center; margin:20px 0;}
-        .category-filter button {padding:10px 20px; margin:10px; background:#0077be; color:#fff; border:none; border-radius:50px; cursor:pointer;}
+        .category-filter button {padding:10px 20px; margin:10px; background:#0077be; color:#fff; border:none; border-radius:50px; cursor:pointer; font-size:1em; touch-action:manipulation;}
         .category-filter button.active, .category-filter button:hover {background:#005c9e;}
         .product-category {display:none;}
         .product-category.active {display:block;}
@@ -36,6 +36,8 @@
         .product-table th, .product-table td {border:1px solid #eee; padding:14px; text-align:left; vertical-align:top;}
         .product-table th {background:#f0f0f0; font-weight:600;}
         .product-table tr:nth-child(even) {background:#fafafa;}
+        .product-row {cursor:pointer; touch-action:manipulation;}
+        .product-details {display:none; padding:10px; background:#f0f0f0; border-top:1px solid #eee;}
         .contact-info {text-align:center; font-size:1.5em; margin:60px 0;}
         .contact-info a {color:#0077be; margin:0 25px; display:inline-block;}
         .contact-info a:hover {text-decoration:underline;}
@@ -58,6 +60,7 @@
             .contact-info a {display:block; margin:20px 0;}
             .cta-btn {padding:18px 40px; font-size:1.3em; margin:20px 0; display:block; width:80%; max-width:300px; margin-left:auto; margin-right:auto;}
             .category-filter button {display:block; width:80%; max-width:300px; margin:10px auto;}
+            .product-details {font-size:0.95em;}
         }
     </style>
 </head>
@@ -85,7 +88,7 @@
 
 <section id="products" class="product-section">
     <h2>Our Products & Wholesale Price List</h2>
-    <p>Explore our full range of premium glass panels, spigots, clamps, gates, posts, and hardware. All prices are ex GST.</p>
+    <p>Explore our full range of premium glass panels, spigots, clamps, gates, posts, and hardware. All prices are ex GST. Click a category to view products, then click a row to expand details.</p>
     <input type="text" id="product-search" placeholder="Search by code, description or price...">
 
     <div class="category-filter">
@@ -95,6 +98,7 @@
         <button data-category="clamps">Clamps</button>
         <button data-category="gates">Gates</button>
         <button data-category="posts">Posts</button>
+        <button data-category="aluminium">Aluminium Fencing</button>
     </div>
 
     <div id="glass" class="product-category active">
@@ -104,28 +108,25 @@
                 <tr><th>Code</th><th>Description</th><th>Price ex GST</th></tr>
             </thead>
             <tbody>
-                <tr><td>FF0100</td><td>12mm Frameless PANEL 100*1200mm</td><td>$15.00</td></tr>
-                <!-- Add all other glass rows here -->
-                <tr><td>FF2000</td><td>12mm Frameless PANEL 2000*1200mm</td><td>$129.60</td></tr>
-                <!-- ... full list from previous -->
+                <tr class="product-row" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'table-row' ? 'none' : 'table-row';">
+                    <td>FF0100</td><td>12mm Frameless PANEL 100*1200mm</td><td>$15.00</td>
+                </tr>
+                <tr class="product-details" style="display:none;">
+                    <td colspan="3">Full details: High-quality 12mm frameless panel for pool fencing, compliant with standards.</td>
+                </tr>
+                <!-- Repeat this structure for all rows: <tr class="product-row">... then <tr class="product-details">... -->
+                <tr class="product-row" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'table-row' ? 'none' : 'table-row';">
+                    <td>FF2000</td><td>12mm Frameless PANEL 2000*1200mm</td><td>$129.60</td>
+                </tr>
+                <tr class="product-details" style="display:none;">
+                    <td colspan="3">Full details: High-quality 12mm frameless panel for pool fencing, compliant with standards.</td>
+                </tr>
+                <!-- Add full spigot rows with this expandable structure -->
             </tbody>
         </table>
     </div>
 
-    <div id="spigots" class="product-category">
-        <h3>Spigots</h3>
-        <table class="product-table">
-            <thead>
-                <tr><th>Code</th><th>Description</th><th>Price ex GST</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>SP-LS-DF-S-P</td><td>Lifestyle Square SPIGOT-Core Drilled POLISH</td><td>$45.00</td></tr>
-                <!-- Add all spigot rows -->
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Repeat for clamps, gates, posts with id="clamps", id="gates", id="posts" and full tables from price list -->
+    <!-- Repeat the expandable row structure for all other categories -->
 
 </section>
 
@@ -138,10 +139,32 @@
 </section>
 
 <section id="contact">
-    <!-- Same as previous, with email -->
+    <h2>Get Your Free Quote Today</h2>
+    <p class="intro">
+        Ready to transform your pool area? Contact us for expert advice and a no-obligation quote.
+    </p>
+    <div class="contact-info">
+        <a href="tel:0432665927">0432 665 927</a>
+        <a href="mailto:info@noosaclearfencing.com.au">info@noosaclearfencing.com.au</a>
+    </div>
+    <div style="text-align:center;">
+        <a href="tel:0432665927" class="cta-btn">Call Now</a>
+        <a href="mailto:info@noosaclearfencing.com.au" class="cta-btn email">Send Email</a>
+    </div>
 </section>
 
-<!-- Other sections and footer same -->
+<section>
+    <h2>Areas We Service</h2>
+    <p class="intro">
+        Noosa Heads • Noosaville • Sunshine Beach • Peregian Beach • Coolum • Maroochydore • Mooloolaba • Buderim • Caloundra • Kawana • Hinterland • Gympie & surrounds
+    </p>
+</section>
+
+<footer>
+    <p><strong>Noosa Clear Fencing</strong> • QBCC Licence #15554051 • ABN 68690835959</p>
+    <p>Professional frameless glass pool fencing specialists • Sunshine Coast & Noosa</p>
+    <p>© 2026 Noosa Clear Fencing. All rights reserved.</p>
+</footer>
 
 <script>
     // Category filter
@@ -156,12 +179,13 @@
         });
     });
 
-    // Search (filters within visible tables)
+    // Search
     document.getElementById('product-search').addEventListener('input', function() {
         let filter = this.value.toLowerCase();
-        document.querySelectorAll('.product-table tbody tr').forEach(row => {
+        document.querySelectorAll('.product-table tbody tr.product-row').forEach(row => {
             let text = row.textContent.toLowerCase();
             row.style.display = text.includes(filter) ? '' : 'none';
+            row.nextElementSibling.style.display = 'none'; // Close details on search
         });
     });
 </script>
