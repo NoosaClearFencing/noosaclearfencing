@@ -41,7 +41,8 @@
         @media (max-width:768px) {
             .logo-stripe {padding:40px 0 80px;}
             .logo-img {max-width:280px;}
-            nav a {display:block; margin:15px 0;}
+            nav {display:flex; flex-wrap:wrap; justify-content:center; padding:10px 0;}
+            nav a {margin:5px; font-size:1em;}
             .gallery-grid {grid-template-columns:1fr;}
             .cta-btn {padding:18px 40px; font-size:1.3em; margin:20px 0; display:block; width:80%; max-width:300px;}
         }
@@ -60,7 +61,6 @@
     <a href="#overview" class="active">Overview</a>
     <a href="#about">About Us</a>
     <a href="#products">Products</a>
-    <a href="#features">Features</a>
     <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
 </nav>
@@ -68,6 +68,20 @@
 <section id="overview" class="active">
     <p style="font-size:1.5em; text-align:center; max-width:900px; margin:0 auto;">
         Premium frameless glass pool fencing trusted for style, safety and uninterrupted views across Noosa and the Sunshine Coast.
+    </p>
+    <h2>Key Features & Compliance</h2>
+    <ul>
+        <li><strong>Glass</strong>: 12mm A-grade toughened safety glass</li>
+        <li><strong>Hardware</strong>: Marine-grade 316/2205 duplex stainless steel</li>
+        <li><strong>Compliance</strong>: Fully meets AS1926.1 & Queensland pool safety laws</li>
+        <li><strong>Certification</strong>: Form 15 Compliance Certificate issued with every installation</li>
+        <li><strong>Licence</strong>: QBCC #15554051</li>
+        <li><strong>Warranty</strong>: 10-year workmanship guarantee</li>
+        <li><strong>Service</strong>: Free on-site measure & quote, fast 2–3 week turnaround</li>
+    </ul>
+    <h2>Areas We Service</h2>
+    <p>
+        Noosa Heads • Noosaville • Sunshine Beach • Peregian Beach • Coolum • Maroochydore • Mooloolaba • Buderim • Caloundra • Kawana • Hinterland • Gympie & surrounds
     </p>
 </section>
 
@@ -103,7 +117,7 @@
         <option value="aluminium">Aluminium Fencing</option>
     </select>
 
-    <div id="glass" class="product-category">
+    <div id="glass" class="product-category" style="display:none;">
         <h3>Glass Panels</h3>
         <table class="product-table">
             <thead>
@@ -251,7 +265,7 @@
         </table>
     </div>
 
-    <!-- Full populated tables for Spigots, Clamps, Gates, Posts, Aluminium Fencing as before -->
+    <!-- Similar full listings for Spigots, Clamps, Gates, Posts, Aluminium as before -->
 
 </section>
 
@@ -322,7 +336,7 @@
                 sec.classList.toggle('active', sec.id === targetId);
             });
             document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+            navLinks.forEach(a => a.classList.remove('active'));
             this.classList.add('active');
         });
     });
