@@ -10,22 +10,24 @@
         a {text-decoration:none;}
         header {position:relative; height:100vh; overflow:hidden;}
         .hero-image {position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:1;}
-        .logo-stripe {position:fixed; top:0; left:0; width:100%; background:#000; padding:20px 0; z-index:10; text-align:center;}
+        .logo-stripe {position:absolute; top:0; left:0; width:100%; background:#000; z-index:2; text-align:center; padding:40px 0;}
         .logo-img {max-width:400px; width:90%; height:auto;}
-        nav {position:fixed; top:100px; left:0; width:100%; background:rgba(255,255,255,0.95); text-align:center; padding:20px 0; z-index:10; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+        nav {position:fixed; top:0; left:0; width:100%; background:rgba(255,255,255,0.95); text-align:center; padding:15px 0; z-index:10; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
         nav a {margin:0 20px; color:#333; font-weight:500; font-size:1.1em;}
         nav a:hover, nav a.active {color:#0077be;}
-        section {padding:80px 20px; max-width:1200px; margin:0 auto; text-align:left;}
+        section {padding:80px 20px; max-width:1100px; margin:0 auto;}
         h1 {font-size:3em; font-weight:300; color:#fff; margin:0; text-align:center;}
         h2 {font-size:2.5em; font-weight:300; text-align:center; margin:60px 0 40px;}
+        h3 {font-size:1.8em; font-weight:400; margin:40px 0 20px;}
         p {font-size:1.2em; max-width:900px; margin:20px auto; text-align:center;}
+        .intro {font-size:1.4em; text-align:center; max-width:900px; margin:40px auto;}
         ul {font-size:1.2em; max-width:800px; margin:40px auto; list-style:none; padding:0; text-align:left;}
         ul li {margin:20px 0; position:relative; padding-left:30px;}
         ul li:before {content:"•"; color:#0077be; position:absolute; left:0; font-size:1.5em; line-height:1;}
         .gallery-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(350px,1fr)); gap:30px; margin:80px 0;}
         .gallery-grid img {width:100%; height:auto; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.1);}
         .product-section, .about-section {background:#fff; padding:60px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.05); margin:60px 0; display:none;}
-        .category-select {width:100%; max-width:600px; padding:15px; margin:40px auto; display:block; border:1px solid #ddd; border-radius:8px; font-size:1.1em;}
+        .category-select {width:100%; max-width:600px; padding:15px; margin:40px auto; display:block; border:1px solid #ddd; border-radius:8px; font-size:1.1em; text-align:center;}
         .product-table {width:100%; border-collapse:collapse; margin:20px 0;}
         .product-table th, .product-table td {border:1px solid #eee; padding:15px; text-align:left;}
         .product-table th {background:#f8f8f8; font-weight:600;}
@@ -37,9 +39,8 @@
         .cta-btn.email:hover {background:#f0f8ff;}
         footer {background:#333; color:#fff; text-align:center; padding:50px 20px;}
         @media (max-width:768px) {
-            .logo-stripe {padding:15px 0;}
+            .logo-stripe {padding:30px 0;}
             .logo-img {max-width:280px;}
-            nav {top:80px;}
             nav a {display:block; margin:15px 0;}
             .gallery-grid {grid-template-columns:1fr;}
             .cta-btn {padding:18px 40px; font-size:1.3em; margin:20px 0; display:block; width:80%; max-width:300px;}
@@ -50,11 +51,10 @@
 
 <header>
     <img src="panoramic.jpg" alt="Panoramic view of frameless glass pool fencing on the Sunshine Coast" class="hero-image">
+    <div class="logo-stripe">
+        <img src="Noosa%20Clear%20Fencing%20LOGO.jpg" alt="Noosa Clear Fencing Logo" class="logo-img">
+    </div>
 </header>
-
-<div class="logo-stripe">
-    <img src="Noosa%20Clear%20Fencing%20LOGO.jpg" alt="Noosa Clear Fencing Logo" class="logo-img">
-</div>
 
 <nav>
     <a href="#overview" class="active">Overview</a>
@@ -74,7 +74,7 @@
 <section id="about" class="about-section">
     <h2>About Us</h2>
     <p>
-        Noosa Clear Fencing is a Queensland company based in Noosa Heads that proudly designs and installs outdoor solutions for the Australian market.
+        Noosa Clear Fencing is a proud Queensland company based in Noosa Heads that proudly installs premium outdoor solutions for the Australian market.
     </p>
     <p>
         We are leaders in the design and installation of innovative products for glass pool fencing. We offer a wide range of products including frameless and semi-frameless systems.
@@ -104,6 +104,10 @@
     </select>
 
     <div id="all" class="product-category">
+        <!-- All products combined if needed -->
+    </div>
+
+    <div id="glass" class="product-category">
         <h3>Glass Panels</h3>
         <table class="product-table">
             <thead>
@@ -247,11 +251,38 @@
                 <tr><td>SOPG1400</td><td>1400 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
                 <tr><td>SOPG1450</td><td>1450 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
                 <tr><td>SOPG1500</td><td>1500 x 1510 x 12mm Stand Off Pool Glass Panel</td></tr>
-            </div>
+            </tbody>
         </table>
     </div>
 
-    <!-- Repeat for Spigots, Clamps, Gates, Posts, Aluminium Fencing with full lists -->
+    <div id="spigots" class="product-category" style="display:none;">
+        <h3>Spigots</h3>
+        <table class="product-table">
+            <thead>
+                <tr><th>Code</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>SP-LS-DF-S-P</td><td>Lifestyle Square SPIGOT-Core Drilled POLISH</td></tr>
+                <tr><td>SP-LS-DF-S-B</td><td>Lifestyle Square SPIGOT-Core Drilled-BLACK</td></tr>
+                <tr><td>SP-LS-DF-S-S</td><td>Lifestyle Square SPIGOT-Core Drilled SATIN</td></tr>
+                <tr><td>SP-LS-DF-SBP-P</td><td>Lifestyle Square SPIGOT-Base Plated POLISH</td></tr>
+                <tr><td>SP-LS-DF-SBP-B</td><td>Lifestyle Square SPIGOT-Base Plated BLACK</td></tr>
+                <tr><td>SP-LS-DF-SBP-S</td><td>Lifestyle Square SPIGOT-Base Plated SATIN</td></tr>
+                <tr><td>SP-GF-S-SILVER</td><td>SPIGOT Glassfit 12mm Glass - Core Drilled SILVER</td></tr>
+                <tr><td>SP-GF-S-P</td><td>SPIGOT Glassfit 12mm Glass - Core Drilled POLISH</td></tr>
+                <tr><td>SP-GF-S-BLACK</td><td>SPIGOT Glassfit 12mm Glass - Core Drilled BLACK</td></tr>
+                <tr><td>SP-GF-SBP-P</td><td>SPIGOT Glassfit 12mm Glass - Base Plated POLISH</td></tr>
+                <tr><td>SP-GF-SBP-BLACK</td><td>SPIGOT Glassfit 12mm Glass - Base Plated BLACK</td></tr>
+                <tr><td>SP-RIO-S-P</td><td>SPIGOT-Core Drilled Rio Round POLISH</td></tr>
+                <tr><td>SP-RIO-S-S</td><td>SPIGOT-Core Drilled Rio Round SATIN</td></tr>
+                <tr><td>SP-RIO-SBP-P</td><td>Rio Round SPIGOT-Base Plated POLISH</td></tr>
+                <tr><td>SP-RIO-SBP-S</td><td>Rio Round SPIGOT-Base Plated SATIN</td></tr>
+                <!-- Add remaining spigots -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Repeat similar full tables for Clamps, Gates, Posts, Aluminium Fencing -->
 
 </section>
 
@@ -311,7 +342,6 @@
 </footer>
 
 <script>
-    // Hide/show sections on nav click
     const productsLink = document.querySelector('nav a[href="#products"]');
     const productsSection = document.getElementById('products');
     const aboutLink = document.querySelector('nav a[href="#about"]');
@@ -351,22 +381,6 @@
         aboutSection.style.display = 'none';
     });
 
-    // Toggle categories
-    function toggleProductCategory(header) {
-        let content = header.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    }
-
-    // Search
-    document.getElementById('product-search').addEventListener('input', function() {
-        let filter = this.value.toLowerCase();
-        document.querySelectorAll('.product-table tbody tr').forEach(row => {
-            let text = row.textContent.toLowerCase();
-            row.style.display = text.includes(filter) ? '' : 'none';
-        });
-    });
-
-    // Dropdown for categories
     function showCategory(value) {
         document.querySelectorAll('.product-category').forEach(cat => {
             cat.style.display = (value === 'all' || cat.id === value) ? 'block' : 'none';
